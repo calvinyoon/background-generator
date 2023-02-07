@@ -1,0 +1,71 @@
+body {
+	background: linear-gradient(to right, var(--color1), var(--color2));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font: sans-serif;
+	color: rgba(0,0,0,0.5);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	top: 15%;
+}
+
+h1 {
+	font: 600 3.5em sans-serif;
+	color: rgba(0,0,0,0.5);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.5em;
+	width: 100%;
+}
+
+h2 {
+	font: 900 1em sans-serif;
+}
+
+h3 {
+	font: 900 1em sans-serif;
+	color: rgba(0,0,0,0.5);
+	padding: 0.5em;
+	margin-top: 0px;
+	background-color: white;
+	text-transform: none;
+	letter-spacing: 0.01em;
+}
+
+.buttoncontainer {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	width: 220px;
+	margin: 20px;
+}
+
+.generatebutton {
+	background-color: rgba(255,0,0,0.4);
+	color: white;
+	height: 40px;
+	width: 100px;
+	border-width: 10px solid blue;
+	border-radius: 10px;
+	cursor: pointer; 
+}
+
+.copybutton {
+	background-color: rgba(0,0,255,0.4);
+	color: white;
+	height: 40px;
+	width: 100px;
+	border-width: 100px solid blue;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.generatebutton:hover {
+	background-color: rgba(255,255,255,0.1);
+}
+
+.copybutton:hover {
+	background-color: rgba(255,255,255,0.1);
+}
