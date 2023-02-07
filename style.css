@@ -29,9 +29,43 @@ h3 {
 	color: rgba(0,0,0,0.5);
 	padding: 0.5em;
 	margin-top: 0px;
-	background-color: white;
+	background-color:linear-gradient(to right, #ca88fa, #35b6d9);
 	text-transform: none;
 	letter-spacing: 0.01em;
+}
+
+.inputcontainer {
+	display: flex;
+}
+
+.section1container {
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	width: 200px;
+	border: 5px solid black;
+	border-radius: 10px; 
+	margin-right: 10px;
+}
+
+.colorinputcontainer {
+	display: flex;
+	justify-content: center;
+}
+
+.gapbetweencolorinputs {
+	width: 20px;
+}
+
+.section2container {
+	display: flex;
+	flex-direction: column;
+	align-items: center; 
+	height: 200px;
+	width: 200px;
+	border: 5px solid black;
+	border-radius: 10px; 
+	margin-left: 10px;
 }
 
 .buttoncontainer {
@@ -39,7 +73,6 @@ h3 {
 	justify-content: space-around;
 	text-align: center;
 	width: 220px;
-	margin: 20px;
 }
 
 .generatebutton {
@@ -47,7 +80,7 @@ h3 {
 	color: white;
 	height: 40px;
 	width: 100px;
-	border-width: 10px solid blue;
+	border: 2px solid black;
 	border-radius: 10px;
 	cursor: pointer; 
 }
