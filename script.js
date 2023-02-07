@@ -1,11 +1,11 @@
 //Variables
 //Capture everything you want to interact with or change
-var color1 = document.querySelector(".color1");	//capture color wheel input #1 element
-var color2 = document.querySelector(".color2"); //capture color wheel input #2 element
-var body = document.querySelector("#gradient"); //capture body element
-var css = document.querySelector("h3");			//capture blank h3 element
-var generateButton = document.querySelector(".generatebutton");	//capture gen button
-var copyButton = document.querySelector(".copybutton");			//capture copy button
+let color1 = document.querySelector(".color1");	//capture color wheel input #1 element
+let color2 = document.querySelector(".color2"); //capture color wheel input #2 element
+let body = document.querySelector("#gradient"); //capture body element
+let css = document.querySelector("h3");			//capture blank h3 element
+let generateButton = document.querySelector(".generatebutton");	//capture gen button
+let copyButton = document.querySelector(".copybutton");			//capture copy button
 
 //Display Code
 function displayCode() {
@@ -41,12 +41,17 @@ color2.addEventListener("input", setBodyProperty);
 function randomGenerator() {
 	//Generate hex b/w 00 and ff
 	const randomHex = () =>
-	Math.floor(Math.random()*256)
-	.toString(16)
-	.padStart(2, "0");
+	Math.floor(Math.random()*256)		//198.643092024717398 -> 198
+	.toString(16)						//198 -> c6 (counting from 0 to 9 then a to f)
+	.padStart(2, "0");					//00 (for single digit case)
 
 	//Generate a color string
 	const randomColor = () => `#${[...Array(3)].map(randomHex).join("")}`;
+	// `#a3f0fe` -> `#${ }`
+	// ${ } -> ${ [].map().join("") }
+	// [] -> [...Array(3)] make array size 3
+	// .map(randomHex) map result of randomHex into new array
+	// .join("") turn resulting array into string
 
 	body.style.setProperty("--color1", randomColor());
 	body.style.setProperty("--color2", randomColor());
@@ -54,7 +59,7 @@ function randomGenerator() {
 	const bodyColor1 = body.style.getPropertyValue("--color1");	//body..style list..#00ff00
 	const bodyColor2 = body.style.getPropertyValue("--color2"); //body..style list..#00ff00
 
-	css.textContent = "linear-gradient(to right, " + bodyColor1 + ", " + bodyColor2 + ")";
+	css.textContent = `linear-gradient(to right, ${bodyColor1}, ${bodyColor2})`;
 
 	color1.value = bodyColor1;
 	color2.value = bodyColor2;
